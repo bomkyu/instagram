@@ -14,5 +14,6 @@
      <h3>🖥 BACK-End 🖥</h3>
      <p>
         <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=Node.js&logoColor=white">
+        <img src="https://img.shields.io/badge/Mysql-4479A1?style=for-the-badge&logo=mysql&logoColor=white">
      </p>
 </div>

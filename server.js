@@ -1,9 +1,9 @@
 const mysql      = require('mysql');
 const connection = mysql.createConnection({
-  host     : '', //IP정보
-  user     : '',    //USER 정보
-  password : '', //mysql root의 pw
-  database : '' //database_name
+  host     : 'localhost', //IP정보
+  user     : 'root',    //USER 정보
+  password : 'fkdldjs190', //mysql root의 pw
+  database : 'instagram_local' //database_name
 });
 
 connection.connect();

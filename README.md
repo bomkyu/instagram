@@ -7,6 +7,6 @@
     <br>
     <h3>🖥 STACK 🖥</h3>
     <p>
-       <img src="https://img.shields.io/badge/HTML5-#E34F26?style=for-the-badge&logo=Html5&logoColor=white">
+       <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=Html5&logoColor=white">
     </p>
 </div>

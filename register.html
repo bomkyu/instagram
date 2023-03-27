@@ -12,7 +12,7 @@
 <body>
     <div class="login_wrap">
         <dl>
-            <dt>
+            <dt style="display: none;">
                 <div class="img_area">
                     <div class="img_thumb">
                         <img src="lib/images/screenshot1.png" alt="" class="on">
@@ -30,10 +30,23 @@
                         </div>
                         <form>
                             <div class="login_form_inner">
+                                <div class="line"><span>또는</span></div>
                                 <div class="input_st_wrap">
                                     <label class="input_st" >
                                         <input type="text" id="id">
-                                        <span>전화번호,사용자 이름 또는 이메일</span>
+                                        <span>휴대폰 번호 또는 이메일 주소</span>
+                                    </label>
+                                </div>
+                                <div class="input_st_wrap">
+                                    <label class="input_st" >
+                                        <input type="text" id="name">
+                                        <span>성명</span>
+                                    </label>
+                                </div>
+                                <div class="input_st_wrap">
+                                    <label class="input_st" >
+                                        <input type="text" id="nickname">
+                                        <span>사용자 이름</span>
                                     </label>
                                 </div>
                                 <div class="input_st_wrap">
@@ -42,18 +55,13 @@
                                         <span>비밀번호</span>
                                     </label>
                                 </div>
-                                <button class="login_btn" href="javascript:0;" onclick="login_btn();">로그인</button>
-                                <div class="line"><span>또는</span></div>
-                                <div class="ext">
-                                    <a href="#">Facebook으로 로그인</a>
-                                    <a href="#">비밀번호를 잊으셨나요?</a>
-                                </div>
+                                <button class="login_btn" href="javascript:0;" onclick="login_btn();">가입</button>
                             </div>
                         </form>
                     </div>
                     
                     <div class="bottom">
-                        계정이 없으신가요?<a href="">가입하기</a>
+                        계정이 있으신가요?<a href="">로그인</a>
                     </div>
                     <div class="download">
                         <p>앱을 다운로드 하세용</p>

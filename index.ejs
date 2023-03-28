@@ -29,17 +29,17 @@
                         <div class="logo">
                             <i data-visualcompletion="css-img" aria-label="Instagram" class="" role="img" style="background-image: url(&quot;https://static.cdninstagram.com/rsrc.php/v3/y-/r/yXM3FgMdVNX.png&quot;); background-position: 0px -52px; background-size: auto; width: 175px; height: 51px; background-repeat: no-repeat; display: inline-block;"></i>
                         </div>
-                        <form method="post" onsubmit="return login_btn(event)">
+                        <form method="post" action="/">
                             <div class="login_form_inner">
                                 <div class="input_st_wrap">
-                                    <label class="input_st" >
-                                        <input type="text" id="id">
+                                    <label class="input_st" name="user_id">
+                                        <input type="text" id="id" name="user_id">
                                         <span>전화번호,사용자 이름 또는 이메일</span>
                                     </label>
                                 </div>
                                 <div class="input_st_wrap">
-                                    <label class="input_st">
-                                        <input type="password" id="password">
+                                    <label class="input_st" name="user_pw">
+                                        <input type="password" id="password" name="user_pw">
                                         <span>비밀번호</span>
                                     </label>
                                 </div>
@@ -69,26 +69,4 @@
         footer
     </footer>
 </body>
-<script>
-//login_page
-function login_btn(){
-    event.preventDefault();
-    let admin_id = 'admin';
-    let admin_pw = '1234';
-    let id = document.getElementById('id').value;
-    let pw = document.getElementById('password').value;
-
-    console.log(`인풋에서 친 ID ${id}, 인풋에서 친 PW ${pw}`);
-    if( id == '' || pw == '' ){
-        alert('아이디 혹은 패스워드를 입력해주세요.')
-        return false;
-    }else if(admin_id == id && admin_pw == pw){
-        location.replace('/sub_page/main');
-        return true;
-    }else{
-        alert('아이디 혹은 패스워드가 다릅니다.');
-        return false;
-    }
-}
-</script>
 </html>

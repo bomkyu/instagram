@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
     res.render('../index.ejs');
 });
 
-router.post('/', (req, res) => {
+router.post('/login', (req, res) => {
     const { user_id, user_pw } = req.body;
     if( !user_id || !user_pw ){
         return res.send('<script>alert("아이디 혹은 패스워드를 입력해 주세요."); location.href="/";</script>');

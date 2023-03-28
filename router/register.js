@@ -8,4 +8,8 @@ router.get('/register', (req, res) => {
     res.render('../register.ejs');
 });
 
+router.post('/',(req,res) => {
+    //db.query(`INSERT INTO`)
+});
+
 module.exports = router;

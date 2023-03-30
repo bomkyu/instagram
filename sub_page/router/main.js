@@ -4,6 +4,7 @@ const db = require('../../server');
 const bodyParser = require('body-parser');
 
 router.get('/main', (req, res) => {
-    res.render('main');
+    const s_name = req.session.user.name;
+    res.render('main',{username : s_name});
 });
 module.exports = router;

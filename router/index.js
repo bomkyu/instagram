@@ -15,26 +15,32 @@ router.use(session({
 
 // 사용자 생성
 router.get('/', (req, res) => {
+    
     res.render('../index.ejs');
 });
 
 router.post('/login', (req, res) => {
-    const { user_id, user_pw } = req.body;
-    if( !user_id || !user_pw ){
-        return res.send('<script>alert("아이디 혹은 패스워드를 입력해 주세요."); location.href="/";</script>');
-    }else{
-        db.query('SELECT * FROM tb_user', function(error, results, fields){
-            if(error) throw error;
-            results.forEach(key => {
-                if(key.user_id != user_id || key.user_password != user_pw){
-                    return res.send(`<script>alert("아이디 혹은 패스워드가 다릅니다."); location.href="/";</script>`);
-                }else if(key.user_id == user_id && key.user_password == user_pw){
-                    req.session.user = { id: key.user_id, name : key.user_nickname };
-                    return res.redirect('/sub_page/main'); // redirect to the desired page
-                }
-            });
+    /**/
+    const id = req.body.user_id;
+    const pw = req.body.user_pw;
+
+    db.query('SELECT * FROM tb_user', function(error, results, fields){
+        if(error) throw error;
+        let found = false;
+
+        results.forEach(key => {
+            if(key.user_id == id && key.user_password == pw){
+                req.session.user = { id: key.user_id, name : key.user_nickname }; //세션에 정보 저장.
+                found = true;
+                return res.json({ success: true, message: '로그인 성공!' });
+                
+            }
         });
-    }
+        if (!found) {
+            return res.json({ success: false, message: '로그인 실패 아이디 혹은 패스워드를 확인해 주세요.' });
+        }
+    });
+    
 });
 
 module.exports = router;
